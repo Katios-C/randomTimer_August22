@@ -28,7 +28,12 @@
 		953E054828A3658A00A38926 /* SummoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E054728A3658A00A38926 /* SummoryView.swift */; };
 		953E054B28A3661500A38926 /* iOSDevPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 953E054A28A3661500A38926 /* iOSDevPackage */; };
 		953E054D28A4D0EA00A38926 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E054C28A4D0EA00A38926 /* Constants.swift */; };
-		953E054F28A4DB8A00A38926 /* RememberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E054E28A4DB8A00A38926 /* RememberView.swift */; };
+		953E054F28A4DB8A00A38926 /* ComeBackClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E054E28A4DB8A00A38926 /* ComeBackClass.swift */; };
+		955118FD28A4E18700732804 /* ComeBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955118FC28A4E18700732804 /* ComeBackView.swift */; };
+		955118FF28A4E30500732804 /* TempView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955118FE28A4E30500732804 /* TempView1.swift */; };
+		9551190328A4FBDC00732804 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190228A4FBDC00732804 /* LoginScreen.swift */; };
+		9551190528A665A500732804 /* InfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190428A665A500732804 /* InfoOverlayView.swift */; };
+		9551190B28AA471D00732804 /* SettingAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190A28AA471D00732804 /* SettingAuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +102,12 @@
 		953E054528A35F1000A38926 /* NotificationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationClass.swift; sourceTree = "<group>"; };
 		953E054728A3658A00A38926 /* SummoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummoryView.swift; sourceTree = "<group>"; };
 		953E054C28A4D0EA00A38926 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		953E054E28A4DB8A00A38926 /* RememberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberView.swift; sourceTree = "<group>"; };
+		953E054E28A4DB8A00A38926 /* ComeBackClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComeBackClass.swift; sourceTree = "<group>"; };
+		955118FC28A4E18700732804 /* ComeBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComeBackView.swift; sourceTree = "<group>"; };
+		955118FE28A4E30500732804 /* TempView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView1.swift; sourceTree = "<group>"; };
+		9551190228A4FBDC00732804 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		9551190428A665A500732804 /* InfoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlayView.swift; sourceTree = "<group>"; };
+		9551190A28AA471D00732804 /* SettingAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,13 +154,18 @@
 			children = (
 				953E050628A35CD500A38926 /* RandomTimerApp.swift */,
 				953E050828A35CD500A38926 /* ContentView.swift */,
+				9551190428A665A500732804 /* InfoOverlayView.swift */,
 				953E053F28A35EAE00A38926 /* RandomTimerEngine.swift */,
 				953E054728A3658A00A38926 /* SummoryView.swift */,
+				9551190228A4FBDC00732804 /* LoginScreen.swift */,
 				953E054128A35ECB00A38926 /* EngineViewModel.swift */,
 				953E054328A35EF600A38926 /* CustomButton.swift */,
 				953E054528A35F1000A38926 /* NotificationClass.swift */,
 				953E054C28A4D0EA00A38926 /* Constants.swift */,
-				953E054E28A4DB8A00A38926 /* RememberView.swift */,
+				953E054E28A4DB8A00A38926 /* ComeBackClass.swift */,
+				955118FC28A4E18700732804 /* ComeBackView.swift */,
+				955118FE28A4E30500732804 /* TempView1.swift */,
+				9551190A28AA471D00732804 /* SettingAuthView.swift */,
 				953E050A28A35CD500A38926 /* Assets.xcassets */,
 				953E050C28A35CD500A38926 /* Preview Content */,
 			);
@@ -334,14 +349,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9551190328A4FBDC00732804 /* LoginScreen.swift in Sources */,
+				9551190528A665A500732804 /* InfoOverlayView.swift in Sources */,
 				953E054828A3658A00A38926 /* SummoryView.swift in Sources */,
 				953E050928A35CD500A38926 /* ContentView.swift in Sources */,
 				953E054028A35EAE00A38926 /* RandomTimerEngine.swift in Sources */,
 				953E054228A35ECB00A38926 /* EngineViewModel.swift in Sources */,
 				953E054628A35F1000A38926 /* NotificationClass.swift in Sources */,
 				953E050728A35CD500A38926 /* RandomTimerApp.swift in Sources */,
+				955118FF28A4E30500732804 /* TempView1.swift in Sources */,
+				9551190B28AA471D00732804 /* SettingAuthView.swift in Sources */,
 				953E054428A35EF600A38926 /* CustomButton.swift in Sources */,
-				953E054F28A4DB8A00A38926 /* RememberView.swift in Sources */,
+				955118FD28A4E18700732804 /* ComeBackView.swift in Sources */,
+				953E054F28A4DB8A00A38926 /* ComeBackClass.swift in Sources */,
 				953E054D28A4D0EA00A38926 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

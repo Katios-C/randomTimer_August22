@@ -3,15 +3,38 @@ import UserNotifications
 
 
 class NotificationsClass {
-    func requestPermission(){
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            if success {
-                print("All set!")
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-    }
+    
+//    var notifications: [UNNotificationRequest] = []
+//    var authorizationStatus: UNAuthorizationStatus?
+    
+//    func reloadAuthorizationStatus() {
+//        UNUserNotificationCenter.current().getNotificationSettings { settings in
+//            DispatchQueue.main.async {
+//                self.authorizationStatus = settings.authorizationStatus
+//            }
+//        }
+//    }
+//
+//    func reloadLocalNotifications() {
+//        UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
+//            DispatchQueue.main.async {
+//                self.notifications = notifications
+//            }
+//        }
+//    }
+    
+//    func requestPermission(){
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+////            if success {
+////                print("All set!")
+////            } else if let error = error {
+////                print(error.localizedDescription)
+////            }
+//            DispatchQueue.main.async {
+//                self.authorizationStatus = success ? .authorized: .denied
+//            }
+//        }
+//    }
 
     
     func wakeMultipleUpNotification(alerts: Int, sec: [Int], text: String ){
@@ -36,4 +59,9 @@ class NotificationsClass {
     func deleteAllPendingNotifications(){
                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
            }
+    
+    
+//    func deleteLocalNotifications(identifiers: [String]) {
+//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+//    }
 }

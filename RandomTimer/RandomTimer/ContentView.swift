@@ -6,9 +6,58 @@ import iOSDevPackage
 struct ContentView: View {
     @StateObject private var randomTimerEngine = EngineViewModel()
     @EnvironmentObject private var navigation: NavigationControllerViewModel
+    
     @State private var showingAlert = false
+    @State private var isCreatePresented = false
+    
+//    @ViewBuilder
+//    var infoOverlayView: some View {
+//        switch randomTimerEngine.authorizationStatus{
+//        case .authorized:
+//            if randomTimerEngine.notifications.isEmpty {
+//                InfoOverlayView(
+//                    infoMessage: "No Notifications Yet",
+//                    buttonTitle: "Create",
+//                    systemImageName: "plus.circle",
+//                    action: {
+//                        isCreatePresented = true
+//                    }
+//                )
+//            }
+//        case .denied:
+//            InfoOverlayView(
+//                infoMessage: "Please Enable Notification Permission In Settings",
+//                buttonTitle: "Settings",
+//                systemImageName: "gear",
+//                action: {
+//                    if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+//                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//                    }
+//                }
+//            )
+//        default:
+//            EmptyView()
+//        }
+//    }
+    
     
     var body: some View {
+        ZStack{
+            if randomTimerEngine.notificationAuthStatusDenied {
+     
+                InfoOverlayView(
+                    infoMessage: "Please Enable Notification Permission In Settings",
+                    buttonTitle: "Settings",
+                    systemImageName: "gear",
+                    action: {
+                        
+                        if let url = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }
+                )
+            
+        } else {
         VStack{
               VStack{
                 VStack {
@@ -46,10 +95,18 @@ struct ContentView: View {
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
+//
+//            Button("") {
+//                randomTimerEngine.requestPermission()
+//            }
+//            .buttonStyle(CustomButton(text:"Разрешить уведомление"))
+            
+            
             Button("") {
                 if randomTimerEngine.hoursAmount > 0 && randomTimerEngine.alertsAmount > 0 {
                     randomTimerEngine.startNotification()
-                    navigation.push(SummoryView(randomTimerEngine: randomTimerEngine))
+                   // navigation.pop(to: .previous)
+//                    navigation.push(SummoryView(randomTimerEngine: randomTimerEngine))
                 } else {
                     showingAlert = true
                     print(stringCanNotBeEmpty)
@@ -59,12 +116,35 @@ struct ContentView: View {
                        Button("OK", role: .cancel) { }
                    }
             .buttonStyle(CustomButton(text:"Старт"))
+
+            
+        }
+        
+//        .overlay(randomTimerEngine.notificationAuthStatusDenied ? infoOverlayView as! EmptyView : EmptyView())
+        .onAppear{
+            randomTimerEngine.reloadAuthorizationStatus()
+        //    randomTimerEngine.determineAuthStatus()
+          
+        }
+        .onChange(of: randomTimerEngine.authorizationStatus) { authorizationStatus in
+            switch authorizationStatus {
+            case .notDetermined:
+                randomTimerEngine.requestPermission()
+            case .authorized:
+                randomTimerEngine.reloadLocalNotifications()
+            default:
+                break
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
+            randomTimerEngine.reloadAuthorizationStatus()
+        }
+        
         }
     }
+        .onAppear{
+            randomTimerEngine.determineAuthStatus()
+        }
 }
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+        
 }
-

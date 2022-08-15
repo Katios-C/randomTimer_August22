@@ -10,11 +10,19 @@ import iOSDevPackage
 
 @main
 struct RandomTimerApp: App {
-   
+    @StateObject private var randomTimerEngine = EngineViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationControllerView(transition: .custom(.slide, .slide)) {
-            ContentView()
+                ContentView()
+//                if randomTimerEngine.isGranted {
+//                ContentView()
+//                } else {
+//                    SettingAuthView(randomTimerEngine: randomTimerEngine)
+//                }
+               // LoginScreen()
+                 
             }
         }
     }
