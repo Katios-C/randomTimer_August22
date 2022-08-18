@@ -11,6 +11,8 @@ struct SummoryView: View {
     var body: some View {
         VStack{
             VStack{
+                Text("Теперь сворачивайте приложение и ждите напоминаний, либо вы можете отменить, если передумали")
+                    .padding()
                 Button("") {
                   //  randomTimerEngine.deleteAllPendingNotifications()
                    // navigation.pop(to: .previous)

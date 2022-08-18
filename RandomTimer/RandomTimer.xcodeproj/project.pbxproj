@@ -34,6 +34,7 @@
 		9551190328A4FBDC00732804 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190228A4FBDC00732804 /* LoginScreen.swift */; };
 		9551190528A665A500732804 /* InfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190428A665A500732804 /* InfoOverlayView.swift */; };
 		9551190B28AA471D00732804 /* SettingAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190A28AA471D00732804 /* SettingAuthView.swift */; };
+		9551190D28AE0B0B00732804 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9551190C28AE0B0B00732804 /* SplashScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		9551190228A4FBDC00732804 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		9551190428A665A500732804 /* InfoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlayView.swift; sourceTree = "<group>"; };
 		9551190A28AA471D00732804 /* SettingAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAuthView.swift; sourceTree = "<group>"; };
+		9551190C28AE0B0B00732804 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				953E050628A35CD500A38926 /* RandomTimerApp.swift */,
 				953E050828A35CD500A38926 /* ContentView.swift */,
+				9551191028AE0D7D00732804 /* SplashView */,
 				9551190428A665A500732804 /* InfoOverlayView.swift */,
 				953E053F28A35EAE00A38926 /* RandomTimerEngine.swift */,
 				953E054728A3658A00A38926 /* SummoryView.swift */,
@@ -210,6 +213,14 @@
 				953E052E28A35CD600A38926 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9551191028AE0D7D00732804 /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				9551190C28AE0B0B00732804 /* SplashScreen.swift */,
+			);
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9551190D28AE0B0B00732804 /* SplashScreen.swift in Sources */,
 				9551190328A4FBDC00732804 /* LoginScreen.swift in Sources */,
 				9551190528A665A500732804 /* InfoOverlayView.swift in Sources */,
 				953E054828A3658A00A38926 /* SummoryView.swift in Sources */,
@@ -515,8 +527,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RandomTimer WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "RandomTimer WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = RandomTimer_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -547,8 +560,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RandomTimer WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "RandomTimer WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = RandomTimer_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

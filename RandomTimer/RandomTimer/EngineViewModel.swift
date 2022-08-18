@@ -26,6 +26,10 @@ class EngineViewModel: ObservableObject {
     func deleteAllPendingNotifications(){
         notification.deleteAllPendingNotifications()
     }
+    
+    func getListOfNotificatio(){
+        notification.getListOfNotification()
+    }
 //    func getNotification() ->  [UNNotificationRequest]{
 //      return notification.notifications
 //    }

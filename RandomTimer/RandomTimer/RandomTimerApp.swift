@@ -15,7 +15,8 @@ struct RandomTimerApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationControllerView(transition: .custom(.slide, .slide)) {
-                ContentView()
+               // ContentView()
+                SplashView()
 //                if randomTimerEngine.isGranted {
 //                ContentView()
 //                } else {

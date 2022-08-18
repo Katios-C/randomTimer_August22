@@ -51,11 +51,25 @@ class NotificationsClass {
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(sec[index]), repeats: false)
             let id = "reminder - \(UUID())"
             let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-            
+         
             UNUserNotificationCenter.current().add(request)
         }
     }
     
+    func getListOfNotification(){
+        UNUserNotificationCenter.current().getDeliveredNotifications{ (notifications) in
+            for notification: UNNotification in notifications {
+              //  print(notification.request.identifier)
+            }
+        }
+        
+        UNUserNotificationCenter.current().getPendingNotificationRequests{ (notifications) in
+            for notification: UNNotificationRequest in notifications {
+                print("here")
+                print(notification.identifier)
+            }
+        }
+    }
     func deleteAllPendingNotifications(){
                UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
            }

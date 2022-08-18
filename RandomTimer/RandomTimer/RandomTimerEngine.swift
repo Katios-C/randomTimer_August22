@@ -6,6 +6,7 @@ class RandomTimerEngine {
     
      var randomIntsArray = [Int]()
     
+  
     func timeToAlert(hours: Int, alerts: Int)->[Int]{
         let minutes = hours * 60
       
